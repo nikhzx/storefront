@@ -19,7 +19,6 @@ from django.contrib import admin
 from django.urls import path, include
 import debug_toolbar
 
-import playground
 
 urlpatterns = [
     path("admin/", admin.site.urls),
