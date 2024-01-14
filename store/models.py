@@ -14,7 +14,7 @@ class Product(models.Model):
     title = models.CharField(max_length = 255)
     slug = models.SlugField()
     description = models.TextField()
-    price = models.DecimalField(max_digits = 6, decimal_places = 2)
+    unit_price = models.DecimalField(max_digits = 6, decimal_places = 2)
     inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now_add = True)
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)
@@ -39,7 +39,7 @@ class Customer(models.Model):
     membership = models.CharField(max_length = 10, choices = MEMBERSHIP_CHOICES, default = MEMBERSHIP_BRONZE)
 
     class Meta:
-        db_table = "store_customers"
+        db_table = "store_customer"
         indexes = [
             models.Index(fields = ['last_name', 'first_name'])
         ]
