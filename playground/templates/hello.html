@@ -4,8 +4,21 @@
         <h1>Hello {{name}}</h1>
         {% else %}
         <h1>Hello World</h1>
-        {% endif %}
+        {% endif %} 
+        {% comment %} <ul>
+            {% for product in products %}
+            <li>{{product.title}}/li>
+                {% endfor %}
+        </ul> {% endcomment %}
+        <ul>
+            {% comment %} {% for order in queryset %}
+            <li>{{order.id}}-{{order.customer.first_name}}--{{order.orderitem.product.title}}</li>
+            {% endfor %} {% endcomment %}
+            {% for object in queryset %}
+            {{object}}
+            <br>
+            {% endfor %}
+        </ul>
     </body>
-
 </html>
 
