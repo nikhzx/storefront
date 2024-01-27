@@ -11,13 +11,10 @@
                 {% endfor %}
         </ul> {% endcomment %}
         <ul>
-            {% comment %} {% for order in queryset %}
-            <li>{{order.id}}-{{order.customer.first_name}}--{{order.orderitem.product.title}}</li>
-            {% endfor %} {% endcomment %}
-            {% for object in queryset %}
-            {{object}}
+            {% comment %} {% for key, value in queryset.items %}
+            {{key}}:{{value}}
             <br>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
         </ul>
     </body>
 </html>
